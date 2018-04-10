@@ -6,12 +6,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 chrome.webRequest.onBeforeRequest.addListener(function(req) {
-  if (req.url.endsWith(".m3u8") || req.url.endsWith(".mpd")) {
+  var re = new RegExp('(\.m3u8|\.mpd)[\?]?.*');
+  if (req.url.match(re)) {
     return { redirectUrl: chrome.runtime.getURL('player.html') + "#" + req.url };
   } else {
     return null;
   }
 }, {
-  urls: [ "*://*/*.m3u8", "*://*/*.mpd" ],
+  urls: [ "*://*/*.m3u8*", "*://*/*.mpd*" ],
   types: [ "main_frame" ]
 }, [ "blocking" ] );
