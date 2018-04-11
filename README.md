@@ -1,6 +1,6 @@
 # Chrome plugin for HLS/MPEG-DASH playback
 
-Chrome extension that uses Eyevinn HTML player to be able to play HLS and MPEG-DASH "natively". Based on [Eyevinn HTML Player](https://eyevinn.github.io/html-player)
+Chrome extension that uses Eyevinn HTML player to be able to play HLS, MPEG-DASH and Smooth Streaming "natively". Based on [Eyevinn HTML Player](https://eyevinn.github.io/html-player)
 
 # License
 
